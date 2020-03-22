@@ -4,7 +4,7 @@
     background-position: center;
     background-size: cover;
     justify-content: flex-start !important;
-    padding: 2rem;
+    padding: 2rem !important;
     max-height: 100vh;
 }
 
