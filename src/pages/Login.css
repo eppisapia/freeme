@@ -1,5 +1,5 @@
 .signinPage {
-    background-image: url('../assets/sign-in/foto-back.png');
+    background-image: url('/assets/sign-in/foto-back.png');
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
