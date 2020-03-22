@@ -1,15 +1,16 @@
 import React from 'react';
-import { IonPage, IonImg, IonHeader, IonToolbar, IonTitle } from '@ionic/react';
+import { IonPage, IonImg } from '@ionic/react';
 
 import LoginForm from '../components/LoginForm';
+import { RouteComponentProps } from 'react-router';
 
 import './Login.css';
 
-const Login: React.FC = () => {
+const Login: React.FC<RouteComponentProps> = (props) => {
     return (
         <IonPage className="signinPage">
             <IonImg src='assets/sign-in/logo-freeme.svg' className="logo" />
-            <LoginForm />
+            <LoginForm nav={props} />
         </IonPage>
     );
 };
