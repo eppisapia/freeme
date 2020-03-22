@@ -1,0 +1,16 @@
+.signinPage {
+    background-image: url('../assets/sign-in/foto-back.png');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    justify-content: flex-start !important;
+    padding: 2rem;
+    max-height: 100vh;
+}
+
+.logo {
+    margin: 2rem;
+    margin-top: 3.5rem;
+    margin-bottom: 7rem;
+}
+
