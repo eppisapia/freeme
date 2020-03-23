@@ -19,6 +19,9 @@ interface chartData {
 const ChartItem: React.FC<ContainerProps> = ({ labels, income, expense }) => {
     const [chartData, setChartData] = useState<chartData[]>([{ name: "", income: 0, expense: 0 }])
 
+    /**
+     * UseEffect hook to build the data of the chart when component mount
+     */
     useEffect(() => {
         const result: chartData[] = []
         for (let i = 0; i < labels.length; i++) {

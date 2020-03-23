@@ -3,6 +3,7 @@ import './LoginForm.css';
 import { IonInput, IonItem, IonIcon, IonButton, IonText, IonToast, IonLoading } from '@ionic/react';
 import { loginService } from '../services/services';
 import { setToken } from '../services/storage';
+import { loginScreen } from '../services/interfaces';
 
 import { RouteComponentProps } from 'react-router';
 
@@ -10,12 +11,6 @@ interface ContainerProps extends React.Props<any> {
     nav: RouteComponentProps,
 }
 
-interface loginScreen {
-    username: string;
-    password: string;
-    isLoading: boolean;
-    error: string;
-}
 const LoginForm: React.FC<ContainerProps> = ({ nav }) => {
     const [data, setData] = useState<loginScreen>({ username: '', password: '', isLoading: false, error: '' });
     const [showError, setError] = useState(false);
@@ -27,9 +22,11 @@ const LoginForm: React.FC<ContainerProps> = ({ nav }) => {
          */
         loginService('/in?type=userpassword&user=' + data.username + "&password=" + data.password)
             .then(res => {
+                /**
+                 * Function to realice an action based on res.status value
+                 */
                 switch (res.status) {
                     case 200:
-                        console.log("Data", res.data.data.dstoken)
                         setToken("dstoken", res.data.data.dstoken).then(res => {
                             setData({ ...data, isLoading: false })
                             nav.history.push('profile')
@@ -48,6 +45,9 @@ const LoginForm: React.FC<ContainerProps> = ({ nav }) => {
             })
     }, [data, nav.history])
 
+    /**
+     * Function to set the message error and show Toast component
+     */
     const showToast = (message: string) => {
         setData({ ...data, error: message })
         setError(true)
