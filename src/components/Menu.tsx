@@ -3,16 +3,6 @@ import { IonMenu, IonHeader, IonToolbar, IonTitle, IonContent, IonList, IonItem,
 import { RouteComponentProps, withRouter } from 'react-router';
 import { NavLink } from 'react-router-dom';
 
-interface Page {
-    title: string;
-    path: string;
-}
-const pages: Page[] = [
-    { title: 'TU CUENTA', path: '/profile' },
-    { title: 'FACTURACION Y VENTAS', path: '/' },
-    { title: 'Salir', path: '/login' }
-
-];
 interface ContainerProps { }
 
 const Menu: React.FC<ContainerProps> = () => {
@@ -29,6 +19,13 @@ const Menu: React.FC<ContainerProps> = () => {
                         <NavLink to="/profile">
                             <IonItem button>
                                 <IonLabel>Tu Cuenta</IonLabel>
+                            </IonItem>
+                        </NavLink>
+                    </IonMenuToggle>
+                    <IonMenuToggle>
+                        <NavLink to="/balance">
+                            <IonItem button>
+                                <IonLabel>FACTURACION Y VENTAS</IonLabel>
                             </IonItem>
                         </NavLink>
                     </IonMenuToggle>
