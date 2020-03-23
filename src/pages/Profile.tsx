@@ -1,7 +1,7 @@
 import { IonContent, IonItem, IonHeader, IonPage, IonTitle, IonToolbar, IonButtons, IonMenuButton, IonIcon, IonImg, IonLabel, IonText } from '@ionic/react';
 import React, { useEffect, useState } from 'react';
 import './Profile.css';
-import { profileService } from '../services/services';
+import { getService } from '../services/services';
 import { getToken } from '../services/storage';
 import { dataMySelf } from '../services/interfaces';
 import ProfileItem from '../components/ProfileItem';
@@ -32,7 +32,7 @@ const Profile: React.FC = () => {
 
   useEffect(() => {
     async function fetchData() {
-      profileService('/users/myself', await getToken("dstoken"))
+      getService('/users/myself', "Production", await getToken("dstoken"))
         .then(res => {
           setData(res.data.data)
         })
