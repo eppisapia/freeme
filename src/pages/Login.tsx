@@ -1,5 +1,5 @@
 import React from 'react';
-import { IonPage, IonImg } from '@ionic/react';
+import { IonPage, IonImg, IonContent } from '@ionic/react';
 
 import LoginForm from '../components/LoginForm';
 import { RouteComponentProps } from 'react-router';

@@ -6,10 +6,10 @@ const { Storage } = Plugins;
  * @param key Key name of the data
  * @param value Data
  */
-export async function setToken(key: string, value: any): Promise<void> {
+export async function setToken(key: string, value: string): Promise<void> {
     await Storage.set({
         key: key,
-        value: JSON.stringify(value)
+        value: value
     });
 }
 
@@ -18,7 +18,7 @@ export async function setToken(key: string, value: any): Promise<void> {
  */
 export async function getToken(key: string): Promise<any> {
     const token: any = await Storage.get({ key: key });
-    return JSON.parse(token.value);
+    return token.value;
 }
 
 /** Function to remove a key and its data from the storage

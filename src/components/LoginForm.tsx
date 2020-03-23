@@ -1,6 +1,6 @@
 import React, { useState, useCallback } from 'react';
 import './LoginForm.css';
-import { IonInput, IonItem, IonIcon, IonButton, IonText, IonToast } from '@ionic/react';
+import { IonInput, IonItem, IonIcon, IonButton, IonText, IonToast, IonLoading } from '@ionic/react';
 import { loginService } from '../services/services';
 import { setToken } from '../services/storage';
 
@@ -29,9 +29,10 @@ const LoginForm: React.FC<ContainerProps> = ({ nav }) => {
             .then(res => {
                 switch (res.status) {
                     case 200:
-                        setToken("dstoken", res.data.dstoken).then(res => {
+                        console.log("Data", res.data.data.dstoken)
+                        setToken("dstoken", res.data.data.dstoken).then(res => {
                             setData({ ...data, isLoading: false })
-                            nav.history.push('mainPage')
+                            nav.history.push('profile')
                         }
                         );
                         break;
@@ -42,6 +43,7 @@ const LoginForm: React.FC<ContainerProps> = ({ nav }) => {
             }
             )
             .catch(e => {
+                setData({ ...data, isLoading: false })
                 showToast(e.response ?.data ?.message)
             })
     }, [data, nav.history])
@@ -54,6 +56,10 @@ const LoginForm: React.FC<ContainerProps> = ({ nav }) => {
 
     return (
         <div className="container">
+            <IonLoading
+                isOpen={data.isLoading}
+                message={'Cargando...'}
+            />
             <IonItem className="ion-item">
                 <IonIcon src="assets/sign-in/usuario-icon.svg" />
                 <IonInput className="signinInput" value={data.username} placeholder="Usuario" onIonChange={e => setData({ ...data, username: e.detail.value! })} clearInput></IonInput>
@@ -78,7 +84,6 @@ const LoginForm: React.FC<ContainerProps> = ({ nav }) => {
                 message={data.error}
                 position="bottom"
                 duration={1500}
-
             />
         </div>
     );

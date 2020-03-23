@@ -21,3 +21,12 @@ export const loginService = (path: string) => {
     });
 }
 
+export const profileService = (path: string, token: string) => {
+    return newsApi.get(path, {
+        headers: {
+            'X-WEB-KEY': 'Production',
+            'X-DS-TOKEN': token
+        }
+    });
+}
+
