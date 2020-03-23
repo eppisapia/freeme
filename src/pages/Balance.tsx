@@ -12,6 +12,7 @@ const Balance: React.FC = () => {
         async function fetchData() {
             getService('/users/myself/graph', "TestMobile", await getToken("dstoken"))
                 .then(res => {
+                    console.log("Data", res.data)
                     setBalance(res.data.data)
                 })
                 .catch(e => console.log(e))

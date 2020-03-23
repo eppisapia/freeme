@@ -21,3 +21,23 @@ export interface dataMySelf {
     Balance: Balance;
 }
 
+export interface balanceValues {
+    amount: number;
+    vat: number
+}
+
+export interface balanceDetails {
+    labels: string[];
+}
+
+export interface balanceSummary {
+    credit: balanceValues;
+    debit: balanceValues
+}
+export interface dataBalance {
+    summary: balanceSummary;
+    detail: balanceDetails;
+    income: number[];
+    expense: number[];
+}
+
