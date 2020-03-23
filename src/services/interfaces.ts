@@ -31,6 +31,7 @@ export interface balanceDetails {
 }
 
 export interface balanceSummary {
+    dateShow: string;
     credit: balanceValues;
     debit: balanceValues
 }
