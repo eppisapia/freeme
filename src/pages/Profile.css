@@ -6,33 +6,42 @@
 
 .balanceContainer {
   display: flex;
-  padding: 2.5rem;
+  padding: 2rem;
+  padding-top: 1.5rem;
+  padding-bottom: 1.5rem;
   flex-direction: row;
   border: 1px solid lightgrey;
   border-right-width: 0;
   border-left-width: 0;
+
 }
 
 .balanceName {
   display: flex;
   flex-direction: column;
-  justify-content: space-around;
-  font-size: 1.5rem;
-  padding: 1rem;
+  justify-content: space-between;
+  padding: 0.5rem 0px 0.5rem 1.5rem;
 }
 
 .profilePic {
-  width: 5rem !important;
+  width: 5.5rem;
+  height: 5.5rem;
+  padding: 1px;
   border: 2px solid lightslategray;
-  border-radius: 50%;
 }
 
 #profileName {
-  font-size: 1.5rem;
-  color: gray;
+  font-size: 1.7rem;
+  color: grey;
 }
 
 .balance {
   font-size: 1.2rem ;
   font-weight: bold;
+}
+
+#separator {
+  margin-left: 0.5rem;
+  margin-right: 0.5rem;
+  color: lightgrey;
 }

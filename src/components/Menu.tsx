@@ -24,7 +24,7 @@ const Menu: React.FC<ContainerProps> = () => {
                     <IonMenuToggle>
                         <NavLink to="/balance">
                             <IonItem button>
-                                <IonLabel>FACTURACION Y VENTAS</IonLabel>
+                                <IonLabel>FACTURACIÓN Y VENTAS</IonLabel>
                             </IonItem>
                         </NavLink>
                     </IonMenuToggle>

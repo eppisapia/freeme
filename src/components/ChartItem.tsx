@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from 'react';
-import './ProfileItem.css';
 import { IonText } from '@ionic/react';
 import {
     AreaChart, Area, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer,
@@ -23,7 +22,6 @@ const ChartItem: React.FC<ContainerProps> = ({ labels, income, expense }) => {
     useEffect(() => {
         const result: chartData[] = []
         for (let i = 0; i < labels.length; i++) {
-            console.log("I", labels[i])
             result.push({
                 name: labels[i],
                 income: income[i],

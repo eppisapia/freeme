@@ -1,10 +1,11 @@
-import { IonContent, IonHeader, IonPage, IonTitle, IonToolbar, IonButtons, IonMenuButton, IonIcon, IonImg, IonLabel, IonText } from '@ionic/react';
+import { IonContent, IonAvatar, IonHeader, IonPage, IonTitle, IonToolbar, IonButtons, IonMenuButton, IonIcon, IonImg, IonLabel, IonText } from '@ionic/react';
 import React, { useEffect, useState } from 'react';
 import './Profile.css';
 import { getService } from '../services/services';
 import { getToken } from '../services/storage';
 import { dataMySelf } from '../services/interfaces';
 import ProfileItem from '../components/ProfileItem';
+import AppHeader from '../components/AppHeader';
 /**
  * Initial value of the Profile Component State
  */
@@ -44,26 +45,18 @@ const Profile: React.FC = () => {
   return (
     <IonPage>
       <IonContent>
-        <IonHeader collapse="condense" class="profileHeader">
-          <IonToolbar>
-            <IonButtons slot="start">
-              <IonMenuButton autoHide={false} />
-            </IonButtons>
-            <IonTitle size="small" color="primary" text-center>TU CUENTA</IonTitle>
-            <IonButtons slot="end">
-              <IonIcon size="large" icon="close" color="primary"></IonIcon>
-            </IonButtons>
-          </IonToolbar>
-        </IonHeader>
+        <AppHeader title="TU CUENTA" />
         <div className="balanceContainer">
-          <IonImg className="profilePic" src='assets/profile/avatar-icon.svg' />
+          <IonAvatar className="profilePic">
+            <img src='assets/profile/avatar-icon.svg' />
+          </IonAvatar>
           <div className="balanceName" >
             <IonLabel id="profileName">{userData.FreemeUser.nombre}</IonLabel>
-            <IonText className="balance">
-              <IonLabel color="primary">{userData.Balance.income}€ </IonLabel>
-              |
-              <IonLabel color="tertiary"> {userData.Balance.expense}€</IonLabel>
-            </IonText>
+            <div className="balance">
+              <IonLabel color="primary">{userData.Balance.income}€</IonLabel>
+              <IonLabel id="separator">{"|"}</IonLabel>
+              <IonLabel color="tertiary">{userData.Balance.expense}€</IonLabel>
+            </div>
           </div>
         </div>
         <ProfileItem title="Nombre y apellidos" value={userData.User.name} />

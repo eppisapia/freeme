@@ -6,6 +6,7 @@ import { dataBalance } from '../services/interfaces';
 import BalanceCard from '../components/BalanceCard';
 import ChartItem from '../components/ChartItem';
 import './Balance.css';
+import AppHeader from '../components/AppHeader';
 
 const InitValues = {
     summary: {
@@ -42,25 +43,14 @@ const Balance: React.FC = () => {
     return (
         <IonPage>
             <IonContent>
-                <IonHeader collapse="condense" class="balanceHeader">
-                    <IonToolbar>
-                        <IonButtons slot="start">
-                            <IonMenuButton autoHide={false} />
-                        </IonButtons>
-                        <IonTitle size="small" color="primary" text-center>FACTURACION Y VENTAS</IonTitle>
-                        <IonButtons slot="end">
-                            <IonIcon size="large" icon="close" color="primary"></IonIcon>
-                        </IonButtons>
-                    </IonToolbar>
-                </IonHeader>
+                <AppHeader title="FACTURACIÓN Y VENTAS" />
                 <div className="balancePage">
-                    <IonText>{balanceData.summary.dateShow}</IonText>
+                    <IonText className="balanceTitle">NOVIEMBRE 2018</IonText>
                     <BalanceCard imgSrc="assets/chart/ingresos-icon-relleno.svg" imgTitle="INGRESOS" subtitle="something" dateShow={balanceData.summary.dateShow} amount={balanceData.summary.debit.amount} vatAmount={balanceData.summary.debit.vat} colorText="primary" />
                     <BalanceCard imgSrc="assets/chart/gastos-icon-relleno.svg" imgTitle="GASTOS" subtitle="something" dateShow={balanceData.summary.dateShow} amount={balanceData.summary.credit.amount} vatAmount={balanceData.summary.credit.vat} colorText="tertiary" />
                 </div>
                 {balanceData.detail.labels.length > 0 ?
                     <ChartItem labels={balanceData.detail.labels} income={balanceData.detail.income} expense={balanceData.detail.expense} />
-
                     : null}
             </IonContent>
         </IonPage>

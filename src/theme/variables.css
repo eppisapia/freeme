@@ -3,7 +3,7 @@
 @font-face {
   font-family: 'Sarabun';
   src: url('/assets/fonts/Sarabun-Light.ttf');
-  font-weight: 200;
+  font-weight: lighter;
   font-style: normal;
 }
 
@@ -17,7 +17,7 @@
 @font-face {
   font-family: 'Sarabun';
   src: url('/assets/fonts/Sarabun-Bold.ttf');
-  font-weight: 900;
+  font-weight: bold;
   font-style: normal;
 }
 

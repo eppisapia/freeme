@@ -1,5 +1,12 @@
 .balancePage {
-    padding: 3rem !important;
+    padding: 2.5rem;
+    padding-top: 2rem;
+    text-align: center;
+}
+
+.balanceTitle {
+    font-size: 2rem;
+    font-weight: bold;
 }
 .balanceHeader {
     display: flex;
