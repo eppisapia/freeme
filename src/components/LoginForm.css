@@ -5,6 +5,7 @@
     background-color: rgba(0,0,0,0.8);
     left: unset !important;
     right: unset !important;
+    text-align: center;
   }
 
   ion-item {

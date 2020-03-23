@@ -2,3 +2,36 @@
   display: flex;
   justify-content: center !important;
 }
+
+.balanceContainer {
+  display: flex;
+  padding: 2.5rem;
+  flex-direction: row;
+  border: 1px solid lightgrey;
+  border-right-width: 0;
+  border-left-width: 0;
+}
+
+.balanceName {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  font-size: 1.5rem;
+  padding: 1rem;
+}
+
+.profilePic {
+  width: 5rem !important;
+  border: 2px solid lightslategray;
+  border-radius: 50%;
+}
+
+#profileName {
+  font-size: 1.5rem;
+  color: gray;
+}
+
+.balance {
+  font-size: 1.2rem ;
+  font-weight: bold;
+}
