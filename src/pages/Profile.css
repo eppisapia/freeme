@@ -1,6 +1,7 @@
 .profileHeader {
   display: flex;
   justify-content: center !important;
+  text-align: center;
 }
 
 .balanceContainer {

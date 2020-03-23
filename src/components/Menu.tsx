@@ -1,6 +1,5 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { IonMenu, IonHeader, IonToolbar, IonTitle, IonContent, IonList, IonItem, IonMenuToggle, IonLabel } from '@ionic/react';
-import { RouteComponentProps, withRouter } from 'react-router';
 import { NavLink } from 'react-router-dom';
 
 interface ContainerProps { }

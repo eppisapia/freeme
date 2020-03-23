@@ -4,6 +4,7 @@ import { getService } from '../services/services';
 import { getToken } from '../services/storage';
 import { dataBalance } from '../services/interfaces';
 import BalanceCard from '../components/BalanceCard';
+import ChartItem from '../components/ChartItem';
 import './Balance.css';
 
 const InitValues = {
@@ -41,7 +42,7 @@ const Balance: React.FC = () => {
     return (
         <IonPage>
             <IonContent>
-                <IonHeader collapse="condense" class="profileHeader">
+                <IonHeader collapse="condense" class="balanceHeader">
                     <IonToolbar>
                         <IonButtons slot="start">
                             <IonMenuButton autoHide={false} />
@@ -56,8 +57,11 @@ const Balance: React.FC = () => {
                     <IonText>{balanceData.summary.dateShow}</IonText>
                     <BalanceCard imgSrc="assets/chart/ingresos-icon-relleno.svg" imgTitle="INGRESOS" subtitle="something" dateShow={balanceData.summary.dateShow} amount={balanceData.summary.debit.amount} vatAmount={balanceData.summary.debit.vat} colorText="primary" />
                     <BalanceCard imgSrc="assets/chart/gastos-icon-relleno.svg" imgTitle="GASTOS" subtitle="something" dateShow={balanceData.summary.dateShow} amount={balanceData.summary.credit.amount} vatAmount={balanceData.summary.credit.vat} colorText="tertiary" />
-
                 </div>
+                {balanceData.detail.labels.length > 0 ?
+                    <ChartItem labels={balanceData.detail.labels} income={balanceData.detail.income} expense={balanceData.detail.expense} />
+
+                    : null}
             </IonContent>
         </IonPage>
     );

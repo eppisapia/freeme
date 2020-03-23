@@ -1,6 +1,6 @@
 import React from 'react';
 import './BalanceCard.css';
-import { IonText, IonLabel, IonImg, IonContent } from '@ionic/react';
+import { IonText, IonLabel, IonImg } from '@ionic/react';
 
 interface ContainerProps extends React.Props<any> {
     imgSrc: string,

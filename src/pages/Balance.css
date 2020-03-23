@@ -1,3 +1,8 @@
 .balancePage {
     padding: 3rem !important;
 }
+.balanceHeader {
+    display: flex;
+    justify-content: center !important;
+    text-align: center;
+}
