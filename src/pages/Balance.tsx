@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from 'react';
-import { IonPage, IonContent, IonHeader, IonToolbar, IonButtons, IonMenuButton, IonTitle, IonIcon } from '@ionic/react';
+import { IonPage, IonContent, IonHeader, IonToolbar, IonButtons, IonMenuButton, IonTitle, IonIcon, IonText } from '@ionic/react';
 import { getService } from '../services/services';
 import { getToken } from '../services/storage';
 import { dataBalance } from '../services/interfaces';
-
+import BalanceCard from '../components/BalanceCard';
 import './Balance.css';
 
 const InitValues = {
@@ -19,10 +19,11 @@ const InitValues = {
         }
     },
     detail: {
-        labels: []
+        labels: [],
+        income: [],
+        expense: []
     },
-    income: [],
-    expense: []
+
 }
 const Balance: React.FC = () => {
     const [balanceData, setBalance] = useState<dataBalance>(InitValues)
@@ -31,7 +32,6 @@ const Balance: React.FC = () => {
         async function fetchData() {
             getService('/users/myself/graph', "TestMobile", await getToken("dstoken"))
                 .then(res => {
-                    console.log("Data", res.data)
                     setBalance(res.data.data.monthly)
                 })
                 .catch(e => console.log(e))
@@ -52,7 +52,12 @@ const Balance: React.FC = () => {
                         </IonButtons>
                     </IonToolbar>
                 </IonHeader>
+                <div className="balancePage">
+                    <IonText>{balanceData.summary.dateShow}</IonText>
+                    <BalanceCard imgSrc="assets/chart/ingresos-icon-relleno.svg" imgTitle="INGRESOS" subtitle="something" dateShow={balanceData.summary.dateShow} amount={balanceData.summary.debit.amount} vatAmount={balanceData.summary.debit.vat} colorText="primary" />
+                    <BalanceCard imgSrc="assets/chart/gastos-icon-relleno.svg" imgTitle="GASTOS" subtitle="something" dateShow={balanceData.summary.dateShow} amount={balanceData.summary.credit.amount} vatAmount={balanceData.summary.credit.vat} colorText="tertiary" />
 
+                </div>
             </IonContent>
         </IonPage>
     );

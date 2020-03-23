@@ -28,6 +28,8 @@ export interface balanceValues {
 
 export interface balanceDetails {
     labels: string[];
+    income: number[];
+    expense: number[];
 }
 
 export interface balanceSummary {
@@ -38,7 +40,6 @@ export interface balanceSummary {
 export interface dataBalance {
     summary: balanceSummary;
     detail: balanceDetails;
-    income: number[];
-    expense: number[];
+
 }
 

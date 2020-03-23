@@ -1,6 +1,6 @@
 import React from 'react';
 import './ProfileItem.css';
-import { IonContent, IonText } from '@ionic/react';
+import { IonText } from '@ionic/react';
 
 interface ContainerProps extends React.Props<any> {
     title: string,
