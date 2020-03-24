@@ -7,7 +7,7 @@ interface ContainerProps extends React.Props<any> {
 }
 const AppHeader: React.FC<ContainerProps> = ({ title }) => {
     return (
-        <IonHeader collapse="condense" >
+        <IonHeader>
             <IonToolbar class="appHeader">
                 <IonButtons slot="start">
                     <IonMenuButton autoHide={false} color="dark" />

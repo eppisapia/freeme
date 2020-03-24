@@ -44,8 +44,8 @@ const Profile: React.FC = () => {
 
   return (
     <IonPage>
+      <AppHeader title="TU CUENTA" />
       <IonContent>
-        <AppHeader title="TU CUENTA" />
         <div className="balanceContainer">
           <IonAvatar className="profilePic">
             <img src='assets/profile/avatar-icon.svg' />

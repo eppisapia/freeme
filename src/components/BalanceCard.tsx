@@ -26,7 +26,7 @@ const BalanceCard: React.FC<ContainerProps> = ({ imgSrc, imgTitle, subtitle, dat
                 </div>
                 <div className="columContainer">
                     <IonLabel color={colorText} className="vatLabel">{vatAmount} €</IonLabel>
-                    <IonText> {dateShow} </IonText>
+                    <IonText>{"IVA"}</IonText>
                 </div>
             </div>
         </div>

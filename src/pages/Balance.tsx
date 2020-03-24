@@ -42,12 +42,13 @@ const Balance: React.FC = () => {
     }, []);
     return (
         <IonPage>
+            <AppHeader title="FACTURACIÓN Y VENTAS" />
             <IonContent>
-                <AppHeader title="FACTURACIÓN Y VENTAS" />
+
                 <div className="balancePage">
                     <IonText className="balanceTitle">NOVIEMBRE 2018</IonText>
-                    <BalanceCard imgSrc="assets/chart/ingresos-icon-relleno.svg" imgTitle="INGRESOS" subtitle="something" dateShow={balanceData.summary.dateShow} amount={balanceData.summary.debit.amount} vatAmount={balanceData.summary.debit.vat} colorText="primary" />
-                    <BalanceCard imgSrc="assets/chart/gastos-icon-relleno.svg" imgTitle="GASTOS" subtitle="something" dateShow={balanceData.summary.dateShow} amount={balanceData.summary.credit.amount} vatAmount={balanceData.summary.credit.vat} colorText="tertiary" />
+                    <BalanceCard imgSrc="assets/chart/ingresos-icon-relleno.svg" imgTitle="INGRESOS" subtitle="VER RESULTADOS" dateShow={balanceData.summary.dateShow} amount={balanceData.summary.debit.amount} vatAmount={balanceData.summary.debit.vat} colorText="primary" />
+                    <BalanceCard imgSrc="assets/chart/gastos-icon-relleno.svg" imgTitle="GASTOS" subtitle="VER RESULTADOS" dateShow={balanceData.summary.dateShow} amount={balanceData.summary.credit.amount} vatAmount={balanceData.summary.credit.vat} colorText="tertiary" />
                 </div>
                 {balanceData.detail.labels.length > 0 ?
                     <ChartItem labels={balanceData.detail.labels} income={balanceData.detail.income} expense={balanceData.detail.expense} />

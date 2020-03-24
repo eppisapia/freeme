@@ -32,7 +32,7 @@ const ChartItem: React.FC<ContainerProps> = ({ labels, income, expense }) => {
             })
         }
         setChartData(result)
-    }, []);
+    }, [expense, income, labels]);
     return (
         <div style={{ width: '80%', height: 300 }}>
             <ResponsiveContainer>
