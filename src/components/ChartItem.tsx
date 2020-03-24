@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from 'react';
-import { IonText } from '@ionic/react';
 import {
-    AreaChart, Area, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer,
+    AreaChart, Area, XAxis, YAxis, Tooltip, ResponsiveContainer,
 } from 'recharts';
 
 interface ContainerProps extends React.Props<any> {

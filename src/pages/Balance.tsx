@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { IonPage, IonContent, IonHeader, IonToolbar, IonButtons, IonMenuButton, IonTitle, IonIcon, IonText } from '@ionic/react';
+import { IonPage, IonContent, IonText } from '@ionic/react';
 import { getService } from '../services/services';
 import { getToken } from '../services/storage';
 import { dataBalance } from '../services/interfaces';
@@ -46,7 +46,7 @@ const Balance: React.FC = () => {
             <IonContent>
 
                 <div className="balancePage">
-                    <IonText className="balanceTitle">NOVIEMBRE 2018</IonText>
+                    <IonText className="balanceTitle">{balanceData.summary.dateShow}</IonText>
                     <BalanceCard imgSrc="assets/chart/ingresos-icon-relleno.svg" imgTitle="INGRESOS" subtitle="VER RESULTADOS" dateShow={balanceData.summary.dateShow} amount={balanceData.summary.debit.amount} vatAmount={balanceData.summary.debit.vat} colorText="primary" />
                     <BalanceCard imgSrc="assets/chart/gastos-icon-relleno.svg" imgTitle="GASTOS" subtitle="VER RESULTADOS" dateShow={balanceData.summary.dateShow} amount={balanceData.summary.credit.amount} vatAmount={balanceData.summary.credit.vat} colorText="tertiary" />
                 </div>
