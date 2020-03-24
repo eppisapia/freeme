@@ -1,0 +1,31 @@
+.profileItem {
+    display: flex;
+    padding: 1rem 3rem 1rem 3rem;
+    flex-direction: row;
+    border: 1px solid lightgrey;
+    border-right-width: 0;
+    border-left-width: 0;
+    justify-content: space-between;
+    font-size: 0.9rem;
+    color: grey;
+}
+
+.columDisplay {
+    display: flex;    
+    flex-direction: column;
+    padding: 1rem 3rem 1rem 3rem;
+    border: 1px solid lightgrey;
+    border-right-width: 0;
+    border-left-width: 0;
+    font-size: 0.9rem;
+    color: grey;
+}
+
+.coloredLabel {
+    background-color: #3dc2ff;
+    color: white;
+    padding-left: 0.8rem;
+    padding-right: 0.8rem;
+    border-radius: 30px;
+    font-weight: bold;
+}

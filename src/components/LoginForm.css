@@ -1,0 +1,43 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    padding: 0px 1rem;
+    background-color: rgba(0,0,0,0.8);
+    left: unset !important;
+    right: unset !important;
+    text-align: center;
+  }
+
+  ion-item {
+    --background: transparent;
+    margin-top: 1rem;
+    --padding-start: 0px !important;
+  }
+
+  .signinInput {
+    font-size: 0.9rem !important;
+    --padding-bottom: 0px !important;
+    margin-left: 0.75rem;
+    color: #fff;
+  }
+
+  .signinButton {
+    margin: 2rem 0 2rem 0;
+  }
+
+  ion-text a {
+    font-weight: 800;
+  }
+
+  #terminos {
+    margin: 2rem 0px 2rem 0px;
+    font-size: 0.8rem;
+  }
+
+  #terminos a {
+    font-size: 0.75rem;
+    font-weight: 700;
+  }
+
+
+
