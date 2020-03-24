@@ -1,4 +1,4 @@
-import { IonContent, IonAvatar, IonHeader, IonPage, IonTitle, IonToolbar, IonButtons, IonMenuButton, IonIcon, IonImg, IonLabel, IonText } from '@ionic/react';
+import { IonContent, IonAvatar, IonPage, IonLabel } from '@ionic/react';
 import React, { useEffect, useState } from 'react';
 import './Profile.css';
 import { getService } from '../services/services';
